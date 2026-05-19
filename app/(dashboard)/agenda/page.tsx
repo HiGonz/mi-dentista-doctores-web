@@ -15,10 +15,10 @@ import type { AppointmentStatus } from '@/types/appointment.types'
 
 const STATUS_FILTERS: { label: string; value: AppointmentStatus | 'todos' }[] = [
   { label: 'Todos', value: 'todos' },
-  { label: 'Confirmados', value: 'confirmado' },
-  { label: 'En consultorio', value: 'en_consultorio' },
-  { label: 'Pendientes', value: 'pendiente' },
-  { label: 'Cancelados', value: 'cancelado' },
+  { label: 'Confirmados', value: 'confirmed' },
+  { label: 'En consultorio', value: 'in_progress' },
+  { label: 'En espera', value: 'arrived' },
+  { label: 'Cancelados', value: 'cancelled' },
 ]
 
 export default function AgendaPage() {
