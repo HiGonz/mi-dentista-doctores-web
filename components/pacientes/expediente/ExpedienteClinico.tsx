@@ -103,7 +103,10 @@ export function ExpedienteClinico({ expediente }: ExpedienteClinicoProps) {
                   nota.importancia === 'alta' ? 'border-danger bg-danger-light' : 'border-neutral-200 bg-white'
                 )}>
                   <div className="flex items-start justify-between gap-2">
-                    <p className="text-sm text-neutral-800">{nota.nota}</p>
+                    <div
+                      className="min-w-0 flex-1 text-sm text-neutral-800 [&_p]:my-0.5 [&_p:empty]:hidden"
+                      dangerouslySetInnerHTML={{ __html: nota.nota }}
+                    />
                     <p className="text-xs text-neutral-500 shrink-0">{formatDate(nota.fecha)}</p>
                   </div>
                 </div>

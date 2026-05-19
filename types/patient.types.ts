@@ -65,7 +65,7 @@ export interface FotoClinica {
   url: string
   categoria: string
   notas: string | null
-  fecha: string
+  fecha: string | null
 }
 
 export interface SignosVitales {

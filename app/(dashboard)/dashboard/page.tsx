@@ -1,29 +1,33 @@
-import type { Metadata } from 'next'
-import { PageHeader } from '@/components/layout/PageHeader'
-import { StatsGrid } from '@/components/dashboard/StatsGrid'
-import { NextAppointmentCard } from '@/components/dashboard/NextAppointmentCard'
-import { TodayAppointmentsList } from '@/components/dashboard/TodayAppointmentsList'
+import type { Metadata } from "next";
+import { DashboardGreeting } from "@/components/dashboard/DashboardGreeting";
+import { StatsGrid } from "@/components/dashboard/StatsGrid";
+import { NextAppointmentCard } from "@/components/dashboard/NextAppointmentCard";
+import { TodayAppointmentsList } from "@/components/dashboard/TodayAppointmentsList";
 
 export const metadata: Metadata = {
-  title: 'Dashboard',
-}
+  title: "Dashboard",
+};
 
 export default function DashboardPage() {
   return (
     <div className="space-y-6">
-      <PageHeader
-        title="Dashboard"
-        description="Resumen de tu actividad de hoy"
-      />
-      <StatsGrid />
-      <div className="grid gap-6 lg:grid-cols-3">
-        <div className="lg:col-span-1">
-          <NextAppointmentCard />
-        </div>
-        <div className="lg:col-span-2">
-          <TodayAppointmentsList />
-        </div>
+      <DashboardGreeting />
+
+      <div>
+        <p className="mb-3 text-base font-semibold text-neutral-900">
+          Próxima Cita
+        </p>
+        <NextAppointmentCard />
       </div>
+
+      <div>
+        <p className="mb-3 text-base font-semibold text-neutral-900">
+          Resumen del Día
+        </p>
+        <StatsGrid />
+      </div>
+
+      <TodayAppointmentsList />
     </div>
-  )
+  );
 }
